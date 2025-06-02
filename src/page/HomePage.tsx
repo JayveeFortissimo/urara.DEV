@@ -7,7 +7,7 @@ const HomePage = () => {
         <img src={image} alt="" className="h-[20rem]" />
 
         <div className="flex flex-col items-center">
-          <h1 className="text-[2.5rem] sm:text-[2.3rem] lg:text-[3rem] text-white text-center ">
+          <h1 className="text-[2.2rem] sm:text-[2.3rem] lg:text-[3rem] text-white text-center ">
             I'm a{" "}
             <span className="text-[#87CEEB]">fullstack web developer</span>
           </h1>
