@@ -1,5 +1,6 @@
 import image from "../assets/logo.png";
-import { MoveRight } from "lucide-react";
+import { MoveRight, ArrowRightToLine } from "lucide-react";
+import Myprojects from "../utils/Project";
 const HomePage = () => {
   return (
     <div className="min-h-[100vh] w-full flex flex-col justify-center items-center gap-[10rem] ">
@@ -23,7 +24,7 @@ const HomePage = () => {
 
       {/* ===============================PROJECTS================================================================ */}
 
-      <div className="w-[100%] min-h-[100vh]">
+      <div className="w-[100%] min-h-[100vh] flex flex-col gap-10">
         <div className="h-[4rem] flex items-center justify-between flex-wrap">
           <div className="flex items-center gap-3">
             <p className="text-[2rem] text-white">
@@ -37,7 +38,30 @@ const HomePage = () => {
             <MoveRight />
           </div>
         </div>
+
+{/* //BODYY */}
+
+<div className="mi-h-[auto] w-full flex justify-center text-white gap-6 flex-wrap ">
+{
+  Myprojects.map(pro => {
+    return(
+      <div className="border border-white h-[30rem] flex flex-col justify-center items-center gap-4 flex-auto p-3">
+            <img src={pro.image} className="h-[13rem]" />
+            <p>{pro.name}</p>
+            <p className="text-center">{pro.description}</p>
+            <div className="flex gap-2 border border-[#87CEEB] p-2 cursor-pointer hover:bg-blue-400">
+              <p>See</p>
+              <ArrowRightToLine />
+            </div>
+        </div>
+    )
+  })
+}
+</div>
+
+        
       </div>
+      {/* // */}
     </div>
   );
 };
