@@ -1,5 +1,5 @@
 import image from "../assets/logo.png";
-import { MoveRight, ArrowRightToLine } from "lucide-react";
+import { MoveRight, ArrowRightToLine, Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 import Myprojects from "../utils/Project";
 import Tools from "../utils/Tools";
 const HomePage = () => {
@@ -45,7 +45,7 @@ const HomePage = () => {
             return (
               <div className="border border-white h-[30rem] flex flex-col justify-center items-center gap-4 flex-auto p-3 rounded shadow-2xl">
                 <img src={pro.image} className="h-[13rem]" />
-                <p className="">{pro.name}</p>
+                <p className="text-2xl">{pro.name}</p>
                 <p className="text-center">{pro.description}</p>
                 <div className="flex items-center gap-2 border border-[#87CEEB] p-2 cursor-pointer hover:bg-blue-400">
                   <p className="text-[0.9rem]">See</p>
@@ -105,7 +105,25 @@ const HomePage = () => {
           </div>
 
           {/* CONTACTS */}
-          
+          <div>
+            <div className="h-[4rem] flex items-center justify-between flex-wrap">
+              <div className="flex items-center gap-3">
+                <p className="text-[1.5rem] text-white">
+                  <span className="text-[#87CEEB] ">#</span>Contact
+                </p>
+                <div className="h-[0rem] w-[25rem] border border-[#87CEEB] hidden sm:flex"></div>
+              </div>
+
+              <div className="flex flex-wrap items-center text-white gap-3"></div>
+            </div>
+            {/*  */}
+          <div className="min-h-[10rem] text-white flex gap-10 mt-6">
+                <Facebook size={28}  />
+                <Instagram size={28}  />
+                <Linkedin size={28}/>
+                <Mail size={28}/>
+          </div>
+          </div>
         </div>
 
         {/* To outside this */}
