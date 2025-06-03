@@ -117,7 +117,7 @@ const HomePage = () => {
               <div className="flex flex-wrap items-center text-white gap-3"></div>
             </div>
             {/*  */}
-          <div className="min-h-[10rem] text-white flex gap-10 mt-6">
+          <div className="min-h-[10rem] text-white flex gap-10 mt-6 justify-center  lg:justify-start">
                 <Facebook size={28}  />
                 <Instagram size={28}  />
                 <Linkedin size={28}/>
