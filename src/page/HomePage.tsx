@@ -10,7 +10,7 @@ const HomePage = () => {
   return (
     <div className="min-h-[100vh] w-full flex flex-col justify-center items-center gap-[10rem] ">
       <div className="min-h-[70vh] flex flex-col justify-center items-center gap-6">
-        <img src={image} alt="" className="h-[20rem]" />
+        <img src={image}  className="h-[auto] w-[20rem]" />
 
         <div className="flex flex-col items-center">
           <h1 className="text-[2.2rem] sm:text-[2.3rem] lg:text-[3rem] text-white text-center ">
