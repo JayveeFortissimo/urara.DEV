@@ -2,10 +2,14 @@ import image from "../assets/logo.png";
 import { MoveRight, ArrowRightToLine, Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 import Myprojects from "../utils/Project";
 import Tools from "../utils/Tools";
+import { useNavigate } from "react-router-dom";
 const HomePage = () => {
+
+  const redirect = useNavigate();
+
   return (
     <div className="min-h-[100vh] w-full flex flex-col justify-center items-center gap-[10rem] ">
-      <div className="min-h-[80vh] flex flex-col justify-center items-center gap-6">
+      <div className="min-h-[70vh] flex flex-col justify-center items-center gap-6">
         <img src={image} alt="" className="h-[20rem]" />
 
         <div className="flex flex-col items-center">
@@ -18,7 +22,9 @@ const HomePage = () => {
           </p>
         </div>
 
-        <button className="border border-[#87CEEB] text-[#87CEEB] h-[3rem] w-[7rem] cursor-pointer">
+        <button 
+        onClick={()=> redirect('contact')}
+        className="border border-[#87CEEB] text-[#87CEEB] h-[3rem] w-[7rem] cursor-pointer">
           Contact Me
         </button>
       </div>
@@ -34,16 +40,20 @@ const HomePage = () => {
             <div className="h-[0rem] w-[25rem] border border-[#87CEEB] hidden sm:flex"></div>
           </div>
 
-          <div className="flex flex-wrap items-center text-white gap-3">
+          <div 
+          onClick={()=> redirect('works')}
+          className="flex flex-wrap items-center text-white gap-3">
             <p className="text-[1rem] cursor-pointer">View all</p>
             <MoveRight />
           </div>
         </div>
 
         <div className="mi-h-[auto] w-full flex justify-center text-white gap-6 flex-wrap ">
-          {Myprojects.map((pro) => {
+          {Myprojects.map((pro,index) => {
             return (
-              <div className="border border-white h-[30rem] flex flex-col justify-center items-center gap-4 flex-auto p-3 rounded shadow-2xl">
+              <div 
+              key={index}
+              className="border border-white h-[30rem] flex flex-col justify-center items-center gap-4 flex-auto p-3 rounded shadow-2xl">
                 <img src={pro.image} className="h-[13rem]" />
                 <p className="text-2xl">{pro.name}</p>
                 <p className="text-center">{pro.description}</p>
@@ -58,7 +68,7 @@ const HomePage = () => {
         {/* // */}
 
         {/* MY TECHNOLOGIES */}
-        <div className="min-h-[50vh] flex flex-col gap-10">
+        <div className="min-h-[50vh] flex flex-col gap-10 mt-20">
           <div className="h-[4rem] flex items-center justify-between flex-wrap">
             <div className="flex items-center gap-3">
               <p className="text-[1.5rem] text-white">
@@ -81,7 +91,7 @@ const HomePage = () => {
           </div>
           {/* ABOUT ME */}
 
-          <div className="min-h-[50vh] flex flex-col gap-10">
+          <div className="min-h-[50vh] flex flex-col gap-10 mt-20">
             <div className="h-[4rem] flex items-center justify-between flex-wrap">
               <div className="flex items-center gap-3">
                 <p className="text-[1.5rem] text-white">

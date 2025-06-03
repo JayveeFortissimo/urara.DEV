@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import {MainOutletPage,Homepages} from './utils/PagestRoutes';
+import {MainOutletPage,Homepages, Work, Abouts, Contact} from './utils/PagestRoutes';
 
 function App() {
 
@@ -9,10 +9,12 @@ const routers = createBrowserRouter([
     element: <MainOutletPage/>,
     children:[
       {index:true, element:<Homepages/> },
+      {path:'works', element:<Work/>},
+      {path:'about',element: <Abouts/>},
+      {path:'contact', element: <Contact/>}
     ]
   }
 ])
-
 
   return (
     <>

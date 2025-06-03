@@ -2,7 +2,7 @@ import {ProjectConfiguration} from '../../interface/project.interface';
 import cristobal from '../assets/Cristobal.png';
 import multibook from '../assets/Multibook.png';
 import portfolio from '../assets/Portfolio.png';
-
+import nombra from '../assets/Pictures.jpg';
 const Myprojects: ProjectConfiguration[] = [
     {
         image:`${cristobal}`,
@@ -20,6 +20,12 @@ const Myprojects: ProjectConfiguration[] = [
         image:`${portfolio}`,
         name:'Portfolio',
         description:'This is my own portfolio.',
+        link:`uraradev.netlify.app`
+    },
+     {
+        image:`${ nombra}`,
+        name:'Nombra System',
+        description:'This is my personal project for my band.',
         link:`uraradev.netlify.app`
     },
 ]

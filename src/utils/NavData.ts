@@ -4,18 +4,22 @@ import {NavigationConfiguration} from '../../interface/NavDatas.reference'
     {
       name: "Home",
       color: "#9CA3AF",
+      links:"/"
     },
     {
       name: "Works",
       color: "#9CA3AF",
+      links: "works"
     },
     {
       name: "About-Me",
       color: "#9CA3AF",
+      links: "about"
     },
     {
       name: "Contacts",
       color: "#9CA3AF",
+      links: "contact"
     },
   ];
 
