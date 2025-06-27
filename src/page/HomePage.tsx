@@ -1,8 +1,18 @@
 import image from "../assets/logo.png";
-import { MoveRight, ArrowRightToLine, Facebook, Instagram, Linkedin, Mail } from "lucide-react";
+import { MoveRight,ArrowRightToLine, Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 import Myprojects from "../utils/Project";
 import Tools from "../utils/Tools";
 import { useNavigate } from "react-router-dom";
+import { Button } from "../components/ui/button";
+import { Card, CardContent } from "../components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../components/ui/carousel";
+
 const HomePage = () => {
 
   const redirect = useNavigate();
@@ -22,11 +32,11 @@ const HomePage = () => {
           </p>
         </div>
 
-        <button 
+        <Button
         onClick={()=> redirect('contact')}
         className="border border-[#87CEEB] text-[#87CEEB] h-[3rem] w-[7rem] cursor-pointer">
           Contact Me
-        </button>
+        </Button>
       </div>
 
       {/* //PROJECTS//*/}
@@ -49,21 +59,38 @@ const HomePage = () => {
         </div>
 
         <div className="mi-h-[auto] w-full flex justify-center text-white gap-6 flex-wrap ">
-          {Myprojects.map((pro,index) => {
-            return (
-              <div 
-              key={index}
-              className="border border-white h-[30rem] flex flex-col justify-center items-center gap-4 flex-auto p-3 rounded shadow-2xl">
-                <img src={pro.image} className="h-[13rem]" />
-                <p className="text-2xl">{pro.name}</p>
-                <p className="text-center">{pro.description}</p>
-                <div className="flex items-center gap-2 border border-[#87CEEB] p-2 cursor-pointer hover:bg-blue-400">
-                  <p className="text-[0.9rem]">See</p>
-                  <ArrowRightToLine />
-                </div>
-              </div>
-            );
-          })}
+
+ <Carousel className="w-full p-2">
+      <CarouselContent className="-ml-1">
+        {Myprojects.map((pro, index) => (
+          <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                   <div 
+                    className=" border border-white h-[30rem] flex flex-col justify-center items-center gap-4 flex-auto p-3 rounded shadow-2xl bg-white">
+                    <img src={pro.image} className="h-[13rem]" />
+                    <p className="text-2xl">{pro.name}</p>
+                    <p className="text-center">{pro.description}</p>
+                    <Button className="flex items-center gap-2 border border-[#87CEEB] p-2 cursor-pointer hover:bg-blue-400">
+                      <p className="text-[0.9rem]">See</p>
+                      <ArrowRightToLine />
+                    </Button>
+                  </div>
+
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+          
+
+
+
         </div>
         {/* // */}
 
@@ -105,10 +132,10 @@ const HomePage = () => {
             {/*  */}
             <div className="min-h-[50vh] text-white flex flex-col gap-[2rem]">
                 <p>Hi! I'm Jayvee, a passionate Fullstack Developer and a soon-to-be graduate with a strong drive for building meaningful and user-focused digital experiences.</p>
-                <p>Over the past few years, I’ve been diving deep into both frontend and backend technologies—designing intuitive interfaces and developing efficient, scalable systems. Whether it’s crafting a clean UI or architecting a robust API, I enjoy the full spectrum of web development and love seeing a project come to life from start to finish.</p>
+                <p>Over the past few years, I've been diving deep into both frontend and backend technologies—designing intuitive interfaces and developing efficient, scalable systems. Whether it's crafting a clean UI or architecting a robust API, I enjoy the full spectrum of web development and love seeing a project come to life from start to finish.</p>
                 <p>I'm constantly learning and exploring new tools and frameworks to sharpen my skills and stay up to date with the ever-evolving tech landscape. My goal? To create impactful solutions that solve real problems and bring value to users.</p>
             <p>When I'm not coding, you'll find me collaborating with teams, learning new technologies, or fine-tuning personal projects. I'm excited to grow professionally and make a mark in the tech industry.</p>
-            <p>Let’s build something amazing together!</p>
+            <p>Let's build something amazing together!</p>
             
             </div>
             

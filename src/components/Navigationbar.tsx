@@ -1,12 +1,14 @@
 import data from "../utils/NavData";
 import { Menu } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 
 interface props{
   handleClick: ()=> void
 }
 
 const Navigationbar: React.FC<props> = ({handleClick}) => {
+
+  const redirect = useNavigate();
 
   return (
     <div className="min-h-[6rem] w-[100%] p-3 flex justify-between items-center sticky top-0">
@@ -24,7 +26,7 @@ const Navigationbar: React.FC<props> = ({handleClick}) => {
         {data.map((pro, index) => {
           return (
             <div key={index}>
-              <NavLink to={pro.links} className={({isActive}) => `${isActive ? 'text-white  shadow-sm' : `text-[${pro.color}]`}  text-[${pro.color}] cursor-pointer`}>{pro.name}</NavLink>
+              <NavLink className={`text-[${pro.color}] cursor-pointer`} onClick={() => redirect(`${pro.links}`)}>{pro.name}</NavLink>
             </div>
           );
         })}
